@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Twis – Anonymous Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="logo">Twis</div>
+        <div class="user-info">
+          Nickname:
+          <span id="nickname-display"></span>
+        </div>
+      </header>
+
+      <main class="main">
+        <ul id="messages" class="messages"></ul>
+      </main>
+
+      <form id="form" class="input-bar" autocomplete="off">
+        <input
+          id="input"
+          type="text"
+          placeholder="Say something anonymously..."
+          maxlength="280"
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <!-- auth / nickname overlay -->
+    <div class="nickname-overlay" id="nickname-overlay">
+      <div class="nickname-card">
+        <h2>Welcome to Twis</h2>
+        <p>Use a nickname + password to chat anonymously.</p>
+
+        <input
+          type="text"
+          id="nickname-input"
+          placeholder="Nickname (e.g. ShadowFox)"
+          maxlength="20"
+        />
+        <input
+          type="password"
+          id="password-input"
+          placeholder="Password"
+          maxlength="50"
+        />
+
+        <div class="auth-buttons">
+          <button id="signup-btn">Sign up</button>
+          <button id="login-btn" class="secondary">Log in</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>

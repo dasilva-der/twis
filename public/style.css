@@ -1,0 +1,197 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #050816;
+  color: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
+  height: 90vh;
+  background: #0b1020;
+  border-radius: 18px;
+  border: 1px solid #23263a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid #23263a;
+  background: #090d1a;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.user-info {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 12px;
+}
+
+.messages {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #15192b;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+.message-nick {
+  font-weight: 600;
+}
+
+.message-time {
+  font-size: 0.7rem;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.input-bar {
+  border-top: 1px solid #23263a;
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  background: #090d1a;
+}
+
+.input-bar input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #23263a;
+  background: #050816;
+  color: #f7f7f7;
+  padding: 8px 12px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.input-bar input:focus {
+  border-color: #4d6bff;
+}
+
+.input-bar button {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #4d6bff;
+  color: #fff;
+}
+
+/* nickname / auth overlay */
+
+.nickname-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nickname-card {
+  background: #0b1020;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid #23263a;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.nickname-card h2 {
+  margin-bottom: 6px;
+}
+
+.nickname-card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.nickname-card input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #23263a;
+  background: #050816;
+  color: #f7f7f7;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-buttons button {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: none;
+  background: #4d6bff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.auth-buttons button.secondary {
+  background: transparent;
+  border: 1px solid #4d6bff;
+  color: #4d6bff;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+  .app {
+    height: 100vh;
+    border-radius: 0;
+  }
+}
